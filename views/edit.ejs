@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <link rel="shortcut icon" href="/img/tabbar.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+<link rel="stylesheet" href="/css/edit.css">
+</head>
+<body>
+    
+<form hidden id="fileform" method="post" enctype="multipart/form-data" action="/uploadd">
+    <input id="file" type="file" name="image">
+  </form>
+    
+    <h1>Edit Your Profile</h1>
+    <!-- <form action="" method="post"> -->
+        <div class="main">
+
+        <div class="l">
+            <div class="circle">
+                <img class="pro" src="/img/upload/<%= user.profilepic  %>" alt="">
+            </div>
+            <div class="button">
+                <!-- <button>Change</button> -->
+                 <button id="editbtn" class="editimage">edit picture</button>
+                <button id="remove" class="editimage">Remove Image</button>
+            </div>
+        </div>
+        <div class="r">
+
+            <form class="" action="/update" method="post">
+                <input class="" type="text" placeholder="username" name="username" value="<%= user.username %>">
+                <!-- <input class="" type="text" placeholder="name" name="name" value="<%= user.name %>"> -->
+                <textarea class="" placeholder="Bio" name="bio"><%= user.bio %></textarea>
+                <input class="update" type="submit" value="Update Details">
+              </form>
+        </div>
+    <!-- </form> -->
+</div>
+
+
+    <script>
+        document.querySelector("#editbtn").addEventListener("click", function(){
+          document.querySelector("#file").click();
+        })
+    
+        document.querySelector("#file")
+        .addEventListener("change", function(){
+          document.querySelector("#fileform").submit();
+        });
+        
+
+        document.querySelector("#remove").addEventListener("click",function(){
+          document.querySelector(".pro").src="/img/upload/default.jpeg"
+          // console.log("hjsfbsdifbsduibfuibsuidfiudsfuihshuifhsuihfuisdhifuhsihfih");
+        })
+
+      </script>
+</body>
+</html>

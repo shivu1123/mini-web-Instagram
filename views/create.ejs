@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <link rel="shortcut icon" href="/img/tabbar.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+<!-- <link rel="stylesheet" href="/css/profile.css"> -->
+<link rel="stylesheet" href="/css/post.css">
+
+</head>
+<body>
+    <div id="m">
+        <div class="l">
+            <img src="/img/white-logo.png" alt="">
+            <div class="route">
+
+                <div class="home dds">
+                    
+                    <a href="/home"> <h4><i class="ri-home-line"></i> Home</h4></a>
+
+                </div>
+                <div class="Search dds">
+                    
+                    <a href="/search"><h4><i class="ri-search-line"></i> Search</h4></a>
+
+                </div>
+                <div class="Explore dds">
+                    
+                    <h4><i class="ri-compass-3-line"></i> Explore</h4>
+                </div>
+                
+                    <div class="Create dds current"> 
+                        <a href="/post"> <h4><i class="ri-add-circle-line"></i> Create</h4></a>
+                    </div>
+                
+                <div class="Profile dds ">
+                    
+                    <a href="/profile">
+
+                        <h4><i class="ri-map-pin-user-fill"></i> Profile</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="r">
+           <div class="box">
+            <div class="left">
+                <div class="im">
+                    <img src="/img/upload/default.jpeg" id="im" alt="">
+                </div>
+            </div>
+            <div class="right">
+                <h1>Create Post</h1>
+                <form action="/post" enctype="multipart/form-data" method="post">
+                    <input type="file" name="image" id="selectedFile" style="display: none;"  class="image">
+                    <input type="button" class="Browse" value="Browse..." onclick="document.getElementById('selectedFile').click();" />
+                    <textarea name="caption" class="caption" placeholder="Enter Your Caption" id=""></textarea>
+                    <input type="submit" value="Post" class="btn">
+                </form>
+            </div>
+           </div>
+        </div>
+    </div>
+    
+
+    <script>
+        let im= document.getElementById("im");
+        let ins=document.getElementById("selectedFile");
+        ins.onchange= function(){
+            im.src=URL.createObjectURL(ins.files[0])
+        }
+    </script>
+</body>
+</html>

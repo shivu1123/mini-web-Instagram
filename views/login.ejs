@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="shortcut icon" href="/img/tabbar.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="main">
+        <div class="page1">
+            <div class="l">
+                <div class="t">
+                    <img src="/img/LOGO.png" alt="">
+                </div>
+                <div class="b">
+                    <img  class="p1" src="/img/m1.jpg" alt="">
+                    <img class="p2"  src="/img/m2.jpg" alt="">
+                <!-- </div> -->
+                <!-- <div class="d"> -->
+                    <img class="p3" src="/img/m3.jpg" alt="">
+                    <img class="p4" src="/img/m4.jpg" alt="">
+                </div>
+            </div>
+            <div class="r">
+                <div class="box">
+                   <h1>Login</h1>
+                    <div class="f">
+                        <form action="/log" method="post">
+                            <input type="text" name="email" placeholder="Email" class="in" id="email" required>
+                            <input type="password" name="password" placeholder="Password" class="in" id="password" required minlength="6" maxlength="10">
+                            <div class="forgot">Forgot Password?</div>
+                            <button class="login-btn" name="login" onclick="login()">Login</button>
+                        </form>
+                    </div>
+                    <div class="b">
+                        <p>Don't have an account? <a href="/">Sign up</a></p>
+            
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
